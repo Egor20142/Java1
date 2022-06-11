@@ -1,0 +1,30 @@
+package Lesson7;
+
+public class cat {
+
+    private String name;
+    private int appetite;
+    private boolean fullness;
+
+    public cat(String name, int appetite) {
+        this.name = name;
+        this.appetite = appetite;
+        fullness = false;
+    }
+
+    void setFullness(boolean status) {
+        fullness = status;
+    }
+
+    void eat(plate plate) {
+        if (!fullness) {
+            fullness = plate.decreaseFood(appetite);
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Name = " + name + ", appetite = " +
+                appetite + ", fullness = " + fullness;
+    }
+}
